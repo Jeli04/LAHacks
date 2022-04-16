@@ -2,12 +2,12 @@ import * as document from "document";
 
 let screen1 = document.getElementById("screen1");
 let screen2 = document.getElementById("screen2");
-let screen1 = document.getElementById("screen3");
-let screen2 = document.getElementById("screen4");
-let screen1 = document.getElementById("screen5");
+let screen3 = document.getElementById("screen3");
+let screen4 = document.getElementById("screen4");
+let screen5 = document.getElementById("screen5");
 
 
-let button1 = document.getElementById("switchToScreen1");
+let switchScreen1 = document.getElementById("switchScreen1");
 
 
 // Add more funcions for new screens 
@@ -15,39 +15,48 @@ function showScreen1() {
   screen1.style.display = "inline";
   screen2.style.display = "none";
   screen3.style.display = "none";
+  screen4.style.display = "none";
+  screen5.style.display = "none";
 }
 
 function showScreen2() {
   screen1.style.display = "none";
   screen2.style.display = "inline";
-  screen3.style.display = "none";  
+  screen3.style.display = "none"; 
+  screen4.style.display = "none";
+  screen5.style.display = "none";
 }
 
 function showScreen3() {
-  screen1.style.display = "inline";
+  screen1.style.display = "none";
   screen2.style.display = "none";
-  screen3.style.display = "none";
+  screen3.style.display = "inline";
+  screen4.style.display = "none";
+  screen5.style.display = "none";
 }
 
 function showScreen4() {
   screen1.style.display = "none";
-  screen2.style.display = "inline";
+  screen2.style.display = "none";
   screen3.style.display = "none";  
+  screen4.style.display = "inline";
+  screen5.style.display = "none";
 }
 
 function showScreen5() {
-  screen1.style.display = "inline";
+  screen1.style.display = "none";
   screen2.style.display = "none";
   screen3.style.display = "none";
+  screen4.style.display = "none";
+  screen5.style.display = "inline";
 }
 
-
-button1.onclick = function() {
-  showScreen2();
-}
 
 
 /* Screen 1 */
+switchScreen1.onclick = function() {
+  showScreen2();
+}
 
 
 
