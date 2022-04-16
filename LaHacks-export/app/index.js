@@ -1,4 +1,7 @@
+import clock from "clock";
 import * as document from "document";
+import { preferences } from "user-settings";
+import * as util from "../common/utils";
 
 let screen1 = document.getElementById("screen1");
 let screen2 = document.getElementById("screen2");
@@ -8,6 +11,7 @@ let screen5 = document.getElementById("screen5");
 
 
 let switchScreen1 = document.getElementById("switchScreen1");
+let timer = document.getElementById("timer")
 
 
 // Add more funcions for new screens 
@@ -53,21 +57,46 @@ function showScreen5() {
 
 
 
-/* Screen 1 */
+/* SCREEN 1 */
 switchScreen1.onclick = function() {
   showScreen2();
 }
 
+// Update the clock every minute
+clock.granularity = "minutes";
+
+// Get a handle on the <text> element
+const timer = document.getElementById("timer");
+
+// Update the <text> element every tick with the current time
+clock.ontick = (evt) => {
+  let today = evt.date;
+  let hours = today.getHours();
+  if (preferences.clockDisplay === "12h") {
+    // 12h format
+    hours = hours % 12 || 12;
+  } else {
+    // 24h format
+    hours = util.zeroPad(hours);
+  }
+  let mins = util.zeroPad(today.getMinutes());
+  timer.text = `${hours}:${mins}`;
+}
 
 
-/* Screen 2 */
+
+/* SCREEN 2 */
+const current_activity = "";
 let list = document.getElementById("myList");
 let items = list.getElementsByClassName("list-item");
 
 items.forEach((element, index) => {
   let touch = element.getElementById("touch");
-  touch.onclick = function(evt) {
+  touch.onclick = function(evt) { 
     console.log(`touched: ${index}`);
+    console.log(`Actvity:` + items[index].id); // Change the id of the compnents to the activity names 
+    current_activity = items[index].id;
+    showScreen3();
   };
 });
 let list = document.getElementById("myList");
@@ -79,11 +108,32 @@ let currentIndex = list.value;
 list.value = 3; // Scroll to the 4th item
 
 
-/* Screen 3 */
+/* SCREEN 3 */
+clock.granularity = "minutes"; // seconds, minutes, or hours
+
+let workDuration = 120
+let restDuration = 30
+
+const restRemaining = document.getElementById("rest-remaining");
+const workRemaining = document.getElementById("work-remaining");
+
+const initialTime = new Date();
+const targetTime = new Date(initialTime.getTime()+workDuration*60000);
+// let current = new Date();
+// const diff = (targetTime - current)/60/1000;
+
+clock.addEventListener("tick", (evt) => {
+  restRemaining.text = Math.floor((targetTime - evt.date)/60/1000)
+  workRemaining.text = evt.date.toTimeString().slice(0, -7);
+});
+// clock.addEventListener('tick', (evt) => {
+//   workRemaining.text = evt.date.toTimeString().slice(0, -7);
+// });
+// initialTime.setMinutes(initialTime.getMinutes()+1);
 
 
-/* Screen 4 */
+/* SCREEN 4 */
 
 
-/* Scrren 5 */
+/* SCREEN 5 */
 
