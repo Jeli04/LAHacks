@@ -1,0 +1,23 @@
+<svg>
+  <use id="myList" href="#tile-list" class="horizontal-pad">
+    <var id="separator-height-bottom" value="6" />
+    <use id="item1" href="#my-item">
+      <set href="#text" attributeName="text-buffer" to="Work" />
+    </use>
+    <use id="item2" href="#my-item">
+      <set href="#text" attributeName="text-buffer" to="Study" />
+    </use>
+    <use id="item3" href="#my-item">
+      <set href="#text" attributeName="text-buffer" to="Gaming" />
+    </use>
+    <use id="item4" href="#my-item">
+      <set href="#text" attributeName="text-buffer" to="TV" />
+    </use>
+    <use id="item5" href="#my-item">
+      <set href="#text" attributeName="text-buffer" to="Social Media" />
+    </use>
+    <use id="item6" href="#my-item">
+      <set href="#text" attributeName="text-buffer" to="+" />
+    </use>
+  
+</svg>

@@ -1,0 +1,34 @@
+.list-item {
+  height: 112;
+}
+
+.list-item text {
+  fill: "white";
+  text-anchor: middle;
+  x: 50%;
+  font-size: 24;
+  text-length: 20;
+}
+
+.line {
+  width: 100%;
+  height: 6;
+  fill: #1A3C40;
+  y: 100%-6;
+}
+
+.bg {
+  fill: #417D7A;
+  width: 100%;
+  height: 100%;
+  x: 0;
+  y: 0;
+}
+
+#touch {
+  width: 100%;
+  height: 100%-6;
+  x: 0;
+  y: 0;
+  opacity: 0;
+}
