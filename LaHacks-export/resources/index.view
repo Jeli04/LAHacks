@@ -2,21 +2,18 @@
   <use id="myList" href="#tile-list" class="horizontal-pad">
     <var id="separator-height-bottom" value="6" />
     <use id="item1" href="#my-item">
-      <set href="#text" attributeName="text-buffer" to="Work" />
+      <set href="#text" attributeName="text-buffer" to="Deep Focus" />
     </use>
     <use id="item2" href="#my-item">
-      <set href="#text" attributeName="text-buffer" to="Study" />
+      <set href="#text" attributeName="text-buffer" to="Casual Work" />
     </use>
     <use id="item3" href="#my-item">
       <set href="#text" attributeName="text-buffer" to="Gaming" />
     </use>
     <use id="item4" href="#my-item">
-      <set href="#text" attributeName="text-buffer" to="TV" />
+      <set href="#text" attributeName="text-buffer" to="Settings" />
     </use>
     <use id="item5" href="#my-item">
-      <set href="#text" attributeName="text-buffer" to="Social Media" />
-    </use>
-    <use id="item6" href="#my-item">
       <set href="#text" attributeName="text-buffer" to="+" />
     </use>
   
