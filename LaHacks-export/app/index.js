@@ -9,7 +9,7 @@ items.forEach((element, index) => {
     console.log(`touched: ${index}`);
   };
 });
-let list = document.getElementById("my-list");
+let list = document.getElementById("myList");
 
 // Get the selected index
 let currentIndex = list.value;
