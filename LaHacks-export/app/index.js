@@ -66,7 +66,7 @@ switchScreen1.onclick = function() {
 clock.granularity = "minutes";
 
 // Get a handle on the <text> element
-const timer = document.getElementById("timer");
+//const timer = document.getElementById("timer");
 
 // Update the <text> element every tick with the current time
 clock.ontick = (evt) => {
@@ -99,7 +99,7 @@ items.forEach((element, index) => {
     showScreen3();
   };
 });
-let list = document.getElementById("myList");
+//let list = document.getElementById("myList");
 
 // Get the selected index
 let currentIndex = list.value;
