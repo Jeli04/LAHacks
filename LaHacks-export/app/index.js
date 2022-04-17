@@ -66,7 +66,7 @@ switchScreen1.onclick = function() {
 clock.granularity = "minutes";
 
 // Get a handle on the <text> element
-//const timer = document.getElementById("timer");
+const timer = document.getElementById("timer");
 
 // Update the <text> element every tick with the current time
 clock.ontick = (evt) => {
@@ -99,7 +99,7 @@ items.forEach((element, index) => {
     showScreen3();
   };
 });
-//let list = document.getElementById("myList");
+let list = document.getElementById("myList");
 
 // Get the selected index
 let currentIndex = list.value;
@@ -119,7 +119,7 @@ const workRemaining = document.getElementById("work-remaining");
 
 const initialTime = new Date();
 const targetTime = new Date(initialTime.getTime()+workDuration*60000);
-const targetRestTime = new Date(targetTime.getTime()+restDuration*60000)
+const targetRestTime = new Date(initialTime.getTime()+(workDuration*60000)+restDuration*60000)
 // let current = new Date();
 // const diff = (targetTime - current)/60/1000;
 
@@ -128,6 +128,9 @@ clock.addEventListener("tick", (evt) => {
   let workLeft = Math.floor((targetTime - evt.date)/60/1000)
   let workHrs = Math.floor(workLeft/60)
   let workMins = workLeft % 60
+  let restLeft = Math.floor((targetRestTime - evt.date)/60/1000)
+  let restHrs = Math.floor(restLeft/60)
+  let restMins = restLeft % 60
   if (workHrs < 10){
     workHrs = '0'+workHrs
   };
@@ -137,10 +140,7 @@ clock.addEventListener("tick", (evt) => {
   workRemaining.text = workHrs + ':' + workMins
   //transition from work to rest paradigm
   if ((Math.floor((targetTime - evt.date)/60/1000)) == 0){
-    showScreen4();
-  let restLeft = Math.floor((targetRestTime - evt.date)/60/1000)
-  let restHrs = Math.floor(restLeft/60)
-  let restMins = restLeft % 60
+    showScreen4();}
   if (restHrs < 10){
     restHrs = '0'+restHrs
   };
@@ -148,7 +148,6 @@ clock.addEventListener("tick", (evt) => {
     restMins = '0'+restMins
   }
     restRemaining.text = restHrs + ':' + restMins
-  }
 });
 // clock.addEventListener('tick', (evt) => {
 //   workRemaining.text = evt.date.toTimeString().slice(0, -7);
