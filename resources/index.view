@@ -1,0 +1,73 @@
+<svg>
+  <svg id = "screen1">
+    <rect id="switchScreen1" pointer-events="all" width="100%" height="100%" fill="green" />
+
+  </svg>
+  
+  <svg id = "screen2" display = "none">
+    <use id="myList" href="#tile-list" class="horizontal-pad">
+      <var id="separator-height-bottom" value="6" />
+      <use id="item1" href="#my-item">
+        <set href="#text" attributeName="text-buffer" to="Work" />
+      </use>
+      <use id="item2" href="#my-item">
+        <set href="#text" attributeName="text-buffer" to="Study" />
+      </use>
+      <use id="item3" href="#my-item">
+        <set href="#text" attributeName="text-buffer" to="Gaming" />
+      </use>
+      <use id="item4" href="#my-item">
+        <set href="#text" attributeName="text-buffer" to="TV" />
+      </use>
+      <use id="item5" href="#my-item">
+        <set href="#text" attributeName="text-buffer" to="Social Media" />
+      </use>
+      <use id="item6" href="#my-item">
+        <set href="#text" attributeName="text-buffer" to="+" />
+      </use>
+    </use>
+  </svg>
+  
+
+  <svg id = "screen3" display = "none">
+    <!--ADD COMPONENTS IN HERE-->
+  </svg>
+  
+  <svg id = "screen4" display = "none">
+    <!--ADD COMPONENTS IN HERE-->
+  </svg>
+  
+  <svg id = "screen5" display = "none">
+    <!--ADD COMPONENTS IN HERE-->    
+    <svg>
+      <g id = "translate" transform="translate(0,-25)">
+        <animateTransform attributeType="translate" easing = "ease-in" begin = "enable"
+          from="0%,-75" to="0%,0%" dur="0.5" />
+    <defs>
+     <symbol id="custom-textarea" type="dynamic-textarea" system-events="all">
+        <textarea id="text" fill="white" x="23%" y="0" width="100%" font-size="25"/>
+        <rect x="0" y="40" width="100%" height="2" fill="fb-cyan"/>
+      </symbol>
+    </defs>
+
+    <use id="custom" href="#custom-textarea" x="25" y="50" width="100%-50">
+     <set href="text" attributeName="text-buffer" to="bzzt bzzt bzzt" />
+    </use>
+      
+      </g>
+    </svg>
+    
+    <image id = "alarm" pointer-events="all" x="68" y="90" width="200" height="200" href="alarm.png" />
+    
+    <rect id="stop" pointer-events="all" width="100%" height="15%" y = "275" fill="red">
+       <text
+        font-family="System-Regular" fill="white"
+        font-size="30" font-weight="regular" x = "50%" y = "92%"
+        text-anchor="middle"
+        >Stop Alarm
+       </text>
+    </rect>
+    
+  </svg>
+</svg>
+ 
