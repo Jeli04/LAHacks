@@ -1,0 +1,50 @@
+<svg>
+  <svg id = "screen1">
+    <use id="switchScreen1" href="#icon-button" class="medium-button application-fill plus-button" />
+    <text id="timer" />
+    <use id="activity" href="#text-button" class="text-button bottom application-fill"/>
+  </svg>
+  
+  <svg id = "screen2" display = "none">
+    <use id="myList" href="#tile-list" class="horizontal-pad">
+      <var id="separator-height-bottom" value="6" />
+      <use id="Work" href="#my-item">
+        <set href="#text" attributeName="text-buffer" to="Work" />
+      </use>
+      <use id="Study" href="#my-item">
+        <set href="#text" attributeName="text-buffer" to="Study" />
+      </use>
+      <use id="Gaming" href="#my-item">
+        <set href="#text" attributeName="text-buffer" to="Gaming" />
+      </use>
+      <use id="TV" href="#my-item">
+        <set href="#text" attributeName="text-buffer" to="TV" />
+      </use>
+      <use id="Social Media" href="#my-item">
+        <set href="#text" attributeName="text-buffer" to="Social Media" />
+      </use>
+      <use id="Custom" href="#my-item">
+        <set href="#text" attributeName="text-buffer" to="Custom +" />
+      </use>
+    </use>
+  </svg>
+
+  <svg id = "screen3" display = "none">
+    <use id="switchToHome" href="#icon-button" class="medium-button application-fill plus-button" />
+    
+    <text id="work-remaining" x="50%" y="50%+15" fill="white"
+      font-size="100" font-family="System-Regular"
+      text-anchor="middle" text-length="30">00:00</text>
+  </svg>
+  
+  <svg id = 'screen4' display = 'none'>
+  <text id="rest-remaining" x="50%" y="50%+15" fill="white"
+      font-size="100" font-family="System-Regular"
+      text-anchor="middle" text-length="30">00:00</text>
+  </svg>
+  
+  <svg id = "screen5" display = "none">
+    <!--ADD COMPONENTS IN HERE-->
+  </svg>
+  
+</svg>
