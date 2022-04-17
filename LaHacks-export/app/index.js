@@ -66,7 +66,7 @@ switchScreen1.onclick = function() {
 clock.granularity = "minutes";
 
 // Get a handle on the <text> element
-//const timer = document.getElementById("timer");
+const timer = document.getElementById("timer");
 
 // Update the <text> element every tick with the current time
 clock.ontick = (evt) => {
@@ -87,7 +87,7 @@ clock.ontick = (evt) => {
 
 /* SCREEN 2 */
 const current_activity = "";
-//let list = document.getElementById("myList");
+let list = document.getElementById("myList");
 let items = list.getElementsByClassName("list-item");
 
 items.forEach((element, index) => {
@@ -148,12 +148,16 @@ clock.addEventListener("tick", (evt) => {
     restMins = '0'+restMins
   }
     restRemaining.text = restHrs + ':' + restMins
-  if (restLeft == 0){
+  if ((Math.floor((targetRestTime - evt.date)/60/1000)) == 0){
     showScreen3();
-  initialTime = new Date();
-  targetTime = new Date(initialTime.getTime()+workDuration*60000);
-  targetRestTime = new Date(initialTime.getTime()+(workDuration*60000)+restDuration*60000); //turn this into a loop and reinitialize the variables
+      initialTime = new Date();
+      targetTime = new Date(initialTime.getTime()+workDuration*60000);
+      targetRestTime = new Date(initialTime.getTime()+(workDuration*60000)+restDuration*60000);
   }
+  //let initialTime = new Date();
+  //let targetTime = new Date(initialTime.getTime()+workDuration*60000);
+  //let targetRestTime = new Date(initialTime.getTime()+(workDuration*60000)+restDuration*60000); //turn this into a loop and reinitialize the variables
+
 });
 // clock.addEventListener('tick', (evt) => {
 //   workRemaining.text = evt.date.toTimeString().slice(0, -7);
