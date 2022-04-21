@@ -3,7 +3,7 @@
 }
 
 .list-item text {
-  fill: "white";
+  fill: "black";
   text-anchor: middle;
   x: 50%;
   font-size: 24;
@@ -13,12 +13,12 @@
 .line {
   width: 100%;
   height: 6;
-  fill: #1A3C40;
+  fill: #FF8474;
   y: 100%-6;
 }
 
 .bg {
-  fill: #417D7A;
+  fill: #9F5F80;
   width: 100%;
   height: 100%;
   x: 0;
@@ -28,7 +28,67 @@
 #touch {
   width: 100%;
   height: 100%-6;
-  x: 0;
+  x: 0; 
   y: 0;
   opacity: 0;
+}
+
+/* SCREEN 1 */
+.application-fill           { fill: #FFC996 }
+.foreground-fill            { fill: fb-white; }
+.background-fill            { fill: fb-black; }
+
+.menu #image{
+  href: "menu.png";
+}
+
+#switchScreen1 {
+  x: 250;
+  y: 20;
+}
+
+#timer {
+  font-size: 80;
+  font-family: System-Bold;
+  text-length: 32;
+  text-anchor: middle;
+  x: 50%;
+  y: 50%+40;
+  fill: white;
+}
+
+
+.application-fill           { fill: #FFC996; }
+.foreground-fill            { fill: fb-white; }
+.background-fill            { fill: fb-black; }
+
+#activity #text {
+  text-buffer: "Breathing";
+}
+
+#Screen3ToScreen1 {
+  x: 250;
+  y: 20;
+}
+
+#Screen4ToScreen1 {
+  x: 250;
+  y: 20;
+}
+
+.clock #image{
+  href:"clock.png"
+}
+
+/* SCREEN 3 AND 4 */
+.application-fill           { fill: #FFC996; }
+.foreground-fill            { fill: fb-white; }
+.background-fill            { fill: fb-black; }
+
+#left1 #text {
+  text-buffer: "--";
+}
+
+#right1 #text {
+  text-buffer: "+";
 }
